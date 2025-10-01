@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhupen Saikia's Songs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("lll.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    /* Title */
+    .title-box {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 50px;  
+      left: 1px;
+      z-index: 10;
+    }
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      background: rgba(0,0,0,0.7);
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: red;   /* 🔴 Three line ka color red */
+    }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 70px;    
+      left: 15px;  
+      background: rgba(0,0,0,0.9);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .nav-links a {
+      display: block;
+      color: cyan;
+      text-decoration: none;
+      margin: 8px 0;
+      font-size: 18px;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: black;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px cyan;
+      z-index: 200;
+    }
+    .modal h2 {
+      margin-bottom: 10px;
+    }
+    .modal button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background: cyan;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* Song Cards */
+    .songs {
+      margin: 20px;
+    }
+    .song-card {
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 15px cyan;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    /* Hover Effect */
+    .song-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px cyan, 0 0 50px cyan;
+      border: 2px solid cyan;
+    }
+
+    .song-card h2 {
+      color: cyan;
+      margin-bottom: 10px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    .song-card:hover h2 {
+      color: white;
+      text-shadow: 0 0 15px cyan;
+    }
+
+    .underline {
+      height: 2px;
+      background: cyan;
+      margin-top: 15px;
+      box-shadow: 0 0 8px cyan;
+      transition: 0.3s;
+    }
+    .song-card:hover .underline {
+      background: white;
+      box-shadow: 0 0 15px cyan, 0 0 30px cyan;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    .song-card:hover audio {
+      filter: drop-shadow(0 0 10px cyan);
+    }
+
+    /* Social Media Links */
+    .social {
+      margin: 30px 0;
+    }
+    .social a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    .social img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px cyan;
+    }
+
+    /* Social Title */
+    .social-title {
+      color: cyan;
+      font-size: 20px;
+      text-shadow: 0 0 12px cyan, 0 0 20px blue;
+      margin-bottom: 15px;
+      margin-top: 30px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0,0,0,0.8);
+      color: #bbb;
+      padding: 12px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title Box -->
+  <div class="title-box"> Bhupen Saikia's Songs 🎵 </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="menu">
+      <a href="#home">🎵 Home</a>
+      <a href="#" onclick="openContact()">🎤 Singer Contact</a>
+      <a href="#" onclick="openAbout()">👨‍💻 About Developer</a>
+    </div>
+  </div>
+
+  <!-- Songs Section -->
+  <div id="home" class="songs">
+    <div class="song-card">
+      <h2>🎵 First Song</h2>
+      <p>📅 Released: 19th April, 2021</p>
+      <p>⏳ Length: 5:42</p>
+🔊The song -->
+      <audio controls>
+        <source src="lll.mp3" type="audio/mp3">
+      </audio>
+      <div class="underline"></div>
+    </div>
+
+    <div class="song-card">
+      <h2>🎵 Second Song</h2>
+      <p>📅 Released: 29th June, 2023</p>
+      <p>⏳ Length: 5:35</p>
+🔊The song -->
+      <audio controls>
+        <source src="lop.mp3" type="audio/mp3">
+      </audio>
+      <div class="underline"></div>
+    </div>
+
+    <!-- Extra line -->
+    <p style="color: cyan; font-style: italic; margin-top: 20px;">
+      ✨ Enjoy the vibes, made with ❤ for true music lovers ✨
+    </p>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <h2>📞 Singer Contact</h2>
+    <p>Number: <b>8638283911</b></p>
+    <button onclick="closeContact()">Close</button>
+  </div>
+
+  <!-- About Developer Modal -->
+  <div class="modal" id="aboutModal">
+    <h2>👨‍💻 About Developer</h2>
+    <p><b>Name:</b> Loki Saikia</p>
+    <p><b>Age:</b> 16</p>
+    <p><b>Instagram:</b> 
+      <a href="https://www.instagram.com/__tony___stark___?igsh=MWtnZDljY24zZnJ0bA==" 
+         target="_blank" 
+         style="color: cyan; text-decoration: none;">
+         @__tony___stark___
+      </a>
+    </p>
+    <button onclick="closeAbout()">Close</button>
+  </div>
+
+  <!-- Social Media Links -->
+  <h2 class="social-title">Singer's Social Media Links--></h2>
+  <div class="social">
+    <a href="https://youtube.com/@bhupensaikia7978?si=43TQ4rLU5ZoqkQKI" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+    </a>
+    <a href="https://www.instagram.com/baba_bhupen_saikia?igsh=NTJmNXozNXhrNXBj" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/share/1BFyZf6yXv/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Bhupen Saikia | All Rights Reserved | Made with ❤ for Music Lovers
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function openContact() {
+      document.getElementById("contactModal").style.display = "block";
+    }
+    function closeContact() {
+      document.getElementById("contactModal").style.display = "none";
+    }
+
+    function openAbout() {
+      document.getElementById("aboutModal").style.display = "block";
+    }
+    function closeAbout() {
+      document.getElementById("aboutModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
